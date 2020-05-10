@@ -38,6 +38,11 @@ return enc.Encode(f)
 
 - allows performing i/o operations according to file's extension.
 
+There are few other methods which provide more accurately reading/writing functionality:
+- Insert - writes content only to a new file; returns error if file already exists;
+- Update - writes content only to existing file; returns error if file not exists;
+- Upsert - does same as `Write` method.
+
 ### installation
 
 Standard `go get`:
