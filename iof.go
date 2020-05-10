@@ -21,12 +21,17 @@ type Reader interface {
 	Read(name string, v interface{}) error
 }
 
-// Write is the interface that creates a new file
+// Writer is the interface that creates a new file
 // with the content of encoded value, regardless
 // to file existence. If file already exists -
 // it will be overrided with a new content.
 type Writer interface {
 	Write(name string, v interface{}) error
+}
+
+type ReadWriter interface {
+	Reader
+	Writer
 }
 
 // Encoding represents interface for file i/o workflow.
